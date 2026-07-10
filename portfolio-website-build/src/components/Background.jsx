@@ -1,7 +1,6 @@
 export default function Background() {
   return (
     <div className="fixed inset-0 z-[-1] overflow-hidden bg-background">
-      <div className="absolute inset-0 bg-noise opacity-[0.03] mix-blend-overlay dark:opacity-[0.05]"></div>
       <div className="absolute inset-0 bg-grid opacity-10"></div>
 
       <div className="blob-cyan absolute -left-[10%] -top-[10%] h-[50vh] w-[50vw] rounded-full bg-[rgba(56,189,248,0.12)] blur-[100px] sm:blur-[120px]"></div>

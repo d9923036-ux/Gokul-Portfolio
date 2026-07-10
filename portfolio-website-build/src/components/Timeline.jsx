@@ -52,13 +52,13 @@ export default function Timeline() {
       <div className="relative mt-14">
         {/* Track */}
         <div
-          className="absolute left-1/2 top-0 h-full w-px bg-card-border -translate-x-1/2"
+          className="absolute left-4 md:left-1/2 top-0 h-full w-px bg-card-border -translate-x-1/2"
           aria-hidden="true"
         />
         {/* Animated line */}
         <div
           ref={lineRef}
-          className="absolute left-1/2 top-0 h-full w-px bg-gradient-to-b from-primary to-primary-bright -translate-x-1/2"
+          className="absolute left-4 md:left-1/2 top-0 h-full w-px bg-gradient-to-b from-primary to-primary-bright -translate-x-1/2"
           style={{ transform: 'scaleY(0)' }}
           aria-hidden="true"
         />
@@ -71,7 +71,7 @@ export default function Timeline() {
               <li key={item.id} className="relative">
                 {/* Dot */}
                 <span
-                  className="pulse-dot absolute left-1/2 top-6 z-10 h-3 w-3 -translate-x-1/2 rounded-full bg-primary"
+                  className="pulse-dot absolute left-4 md:left-1/2 top-6 z-10 h-3 w-3 -translate-x-1/2 rounded-full bg-primary"
                   aria-hidden="true"
                 />
                 <motion.div
@@ -79,8 +79,8 @@ export default function Timeline() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: '-80px' }}
                   transition={{ duration: 0.5 }}
-                  className={`w-[calc(50%-1.25rem)] md:w-[calc(50%-2.5rem)] ${
-                    isLeft ? 'mr-auto' : 'ml-auto'
+                  className={`w-[calc(100%-2.5rem)] md:w-[calc(50%-2.5rem)] ml-auto ${
+                    isLeft ? 'md:mr-auto md:ml-0' : 'md:ml-auto'
                   }`}
                 >
                   <div className="glass rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--color-card-border-hover)] hover:shadow-[var(--color-card-shadow-hover)]">

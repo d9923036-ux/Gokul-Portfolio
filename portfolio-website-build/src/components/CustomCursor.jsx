@@ -5,6 +5,8 @@ export default function CustomCursor() {
   const ringRef = useRef(null)
 
   useEffect(() => {
+    if (!window.matchMedia('(min-width: 1024px)').matches) return
+
     const dot = dotRef.current
     const ring = ringRef.current
     let x = 0
