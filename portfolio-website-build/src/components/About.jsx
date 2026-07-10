@@ -38,16 +38,6 @@ function Counter({ value, suffix, start }) {
 export default function About({ isDesktop }) {
   const sectionRef = useRef(null)
   const inView = useInView(sectionRef, { once: true, margin: '-100px' })
-  const cardRef = useRef(null)
-  const [tilt, setTilt] = useState({ x: 0, y: 0 })
-
-  function onMouseMove(e) {
-    if (!isDesktop || !cardRef.current) return
-    const rect = cardRef.current.getBoundingClientRect()
-    const px = (e.clientX - rect.left) / rect.width - 0.5
-    const py = (e.clientY - rect.top) / rect.height - 0.5
-    setTilt({ x: py * -8, y: px * 8 })
-  }
 
   return (
     <section id="about" ref={sectionRef} className="mx-auto max-w-6xl px-4 py-24 sm:px-6">
@@ -62,37 +52,12 @@ export default function About({ isDesktop }) {
         </h2>
       </motion.div>
 
-      <div className="mt-12 grid items-center gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)]">
+      <div className="mt-12 flex flex-col items-center justify-center">
         <motion.div
-          initial={{ opacity: 0, x: -24 }}
-          animate={inView ? { opacity: 1, x: 0 } : {}}
+          initial={{ opacity: 0, y: 24 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.15 }}
-          className="mx-auto w-full max-w-sm"
-        >
-          <div
-            ref={cardRef}
-            onMouseMove={onMouseMove}
-            onMouseLeave={() => setTilt({ x: 0, y: 0 })}
-            className="glass overflow-hidden rounded-3xl p-3 transition-transform duration-200 ease-out"
-            style={{
-              transform: isDesktop
-                ? `perspective(900px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)`
-                : undefined,
-            }}
-          >
-            <img
-              src="/images/profile.jpeg"
-              alt="Portrait of Gokul, frontend developer"
-              className="aspect-square w-full rounded-2xl object-cover filter brightness-105 contrast-105 saturate-110"
-            />
-          </div>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, x: 24 }}
-          animate={inView ? { opacity: 1, x: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.25 }}
-          className="w-full max-w-[680px] mx-auto lg:mx-0"
+          className="w-full max-w-[760px] mx-auto"
         >
           <div className="space-y-5">
             <p className="text-pretty text-base sm:text-lg leading-8 text-secondary">
