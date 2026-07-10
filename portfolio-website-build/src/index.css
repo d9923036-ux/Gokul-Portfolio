@@ -171,24 +171,24 @@ body {
 }
 
 @keyframes float-blob {
-  0% { transform: translate(0, 0) scale(1); border-radius: 50%; }
-  33% { transform: translate(15vw, 15vh) scale(1.1); border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
-  66% { transform: translate(-10vw, 25vh) scale(0.9); border-radius: 60% 40% 30% 70% / 50% 60% 40% 50%; }
-  100% { transform: translate(0, 0) scale(1); border-radius: 50%; }
+  0% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(15vw, 15vh) scale(1.1); }
+  66% { transform: translate(-10vw, 25vh) scale(0.9); }
+  100% { transform: translate(0, 0) scale(1); }
 }
 
 @keyframes float-blob-reverse {
-  0% { transform: translate(0, 0) scale(1); border-radius: 50%; }
-  33% { transform: translate(-15vw, -15vh) scale(1.1); border-radius: 60% 40% 30% 70% / 50% 60% 40% 50%; }
-  66% { transform: translate(10vw, -25vh) scale(0.9); border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
-  100% { transform: translate(0, 0) scale(1); border-radius: 50%; }
+  0% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-15vw, -15vh) scale(1.1); }
+  66% { transform: translate(10vw, -25vh) scale(0.9); }
+  100% { transform: translate(0, 0) scale(1); }
 }
 
 @keyframes float-blob-center {
-  0% { transform: translate(-50%, -50%) scale(1); border-radius: 50%; }
-  33% { transform: translate(-20%, -70%) scale(1.2); border-radius: 30% 70% 50% 50% / 50% 40% 60% 50%; }
-  66% { transform: translate(-80%, -30%) scale(0.8); border-radius: 50% 50% 30% 70% / 60% 50% 40% 50%; }
-  100% { transform: translate(-50%, -50%) scale(1); border-radius: 50%; }
+  0% { transform: translate(-50%, -50%) scale(1); }
+  33% { transform: translate(-20%, -70%) scale(1.2); }
+  66% { transform: translate(-80%, -30%) scale(0.8); }
+  100% { transform: translate(-50%, -50%) scale(1); }
 }
 
 .blob-cyan {
